@@ -1,6 +1,6 @@
-const functions = require("firebase-functions");
-const express = require("express");
-const cors = require("cors");
+import { https } from "firebase-functions";
+import express, { json } from "express";
+import cors from "cors";
 const stripe = require("stripe")('sk_test_51MC4XySDkAcNApaVatXLXVg3F4cmgrmZjVEGpVKdl2UMXq3mEzb3JO8ffgsZJUd1VIrsDmDEVk2GuSuT9bRrO6NJ00GykRYveo')//Secret Key
 
 //API
@@ -10,7 +10,7 @@ const app = express();
 
 //- Middlewares
 app.use(cors({origin: true}));
-app.use(express.json());
+app.use(json());
 
 //- API routes
 app.get('/', (request, response)=> response.status(200).send('hello world'));
@@ -32,8 +32,7 @@ app.post("/payments/create", async (request,response)=>{
     });
 });
 
-//- Listen command
-exports.api = functions.https.onRequest(app);
+export const api = https.onRequest(app);
 
 //Example endpoint 
 //http function initialized (http://127.0.0.1:5001/clone-2c7c1/us-central1/api)//prints 'hello world'.
