@@ -54,7 +54,29 @@
     border: 1px solid;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
+
+    padding: 7px 9px;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #111;
+    background-color: #f0c14b;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 4px #999;
   }
+
+  .login__signInButton:hover{
+    background-color: #e5b63e;
+    transition: 0.7s;
+  }
+
+   .login__signInButton:active{
+    background-color: #f0c14b;
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+}
 
   .login__registerButton {
     border-radius: 2px;
@@ -63,6 +85,23 @@
     border: 1px solid;
     margin-top: 10px;
     border-color: darkgray;
+
+    padding: 7px 9px;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #111;
+    background-color: #e7e3db;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 4px #999;
+  }
+
+  .login__registerButton:active{
+    background-color: #d6d3ca;
+    box-shadow: 0 1px #666;
+    transform: translateY(3px);
   }
   
   

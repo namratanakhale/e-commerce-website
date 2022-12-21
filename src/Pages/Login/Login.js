@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './Login.css'
 import { Link, useHistory } from "react-router-dom";
-import { auth } from "./firebase";
+import { auth } from "../../firebase";
 
 function Login() {
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    // const [username, setUsername] = useState('');
 
     const signIn = e => {
         e.preventDefault();
@@ -38,7 +39,7 @@ function Login() {
             <Link to='/'>
                 <img
                     className="login__logo"
-                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png' 
+                    src='https://cdn.shopify.com/s/files/1/0597/0244/4203/files/amazelogo_480x.png?v=1629749076' 
                 />
             </Link>
 
@@ -46,6 +47,10 @@ function Login() {
                 <h1>Sign-in</h1>
 
                 <form>
+                    
+                    {/* <h5>Username</h5>
+                    <input type='text' value={username} onChange={e => setUsername(e.target.value)} /> */}
+
                     <h5>E-mail</h5>
                     <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
 

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Payment.css';
-import { useStateValue } from "./StateProvider";
-import CheckoutProduct from "./CheckoutProduct";
+import { useStateValue } from "../../Utils/StateProvider"
+import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import { Link, useHistory } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
-import { getBasketTotal } from "./reducer";
-import axios from './axios';
-import { db } from "./firebase";
+import { getBasketTotal } from "../../Utils/reducer";
+import axios from '../../Utils/axios';
+import { db } from "../../firebase";
+
 
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
@@ -48,9 +49,11 @@ function Payment() {
             payment_method: {
                 card: elements.getElement(CardElement)
             }
-        }).then(({ paymentIntent }) => {
+            
+        }) 
+        .then(({ paymentIntent }) => {
             // paymentIntent = payment confirmation
-
+            
             db
               .collection('users')
               .doc(user?.uid)
@@ -74,7 +77,7 @@ function Payment() {
         })
 
     }
-
+    
     const handleChange = event => {
         // Listen for changes in the CardElement
         // and display any errors as the customer types their card details

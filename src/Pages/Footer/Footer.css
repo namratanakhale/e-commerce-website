@@ -1,0 +1,24 @@
+.row {
+    background-color: rgb(234 237 237);
+    color: #474c57;
+    padding-top: 3em;
+    width: 100v;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 21px;
+  }
+
+.col{
+    display: flex;
+    flex-direction: column;
+    size: 2px;
+  }
+ 
+.social-icons{
+    display: flex;
+    
+  }
+  .col-sm{
+    display: flex;
+    justify-content: center;
+  }
